@@ -4,6 +4,7 @@
    <title></title>
 
     <link href="css/bootstrap.css" rel="stylesheet"> <!-- pulls in the main bootstrap content we need -->
+    <link href="css/styles.css" rel="stylesheet"> <!-- pulls in the main bootstrap content we need -->
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -15,8 +16,50 @@
   </head>
   
   <body>
+  <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">My first album of photos</a>
+    </div>
+  
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="albums.html">Albums</a></li>
+        <li><a href="photos.html">All photos</a></li>
+
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Register</a></li>
+            <li><a href="#">Sing in</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+           
+            <li><a href="#">Help</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </nav>
+
   <div class="container">
     <h1>Hello bootsrap from London University.</h1>
+     <ol class="breadcrumb">
+              <li class="active">
+                <a href="index.html">Home</a>
+              </li>
+             
+            </ol>
   </div>
   
     <script src="js/jquery.min.js"></script> <!-- jquery libraries -->
