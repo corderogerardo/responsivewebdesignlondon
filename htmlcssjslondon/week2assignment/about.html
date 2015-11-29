@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tasksify - a list of tasks</title>
+
+	<link href="css/bootstrap.css" rel="stylesheet"> <!-- pulls in the main bootstrap content we need -->
+    	<link href="css/styles.css" rel="stylesheet"> <!-- pulls in the main bootstrap content we need -->
+
+    	<!-- this is for a toogle checkbox for status of the task -->
+    	<link rel="stylesheet" type="text/css" href="css/bootstrap-toggle.min.css">
+</head>
+<body>
+
+ <nav class="navbar navbar-default" role="navigation"> <!-- start of menu -->
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Tasksify </a>
+    </div>
+  
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <li ><a href="index.html">Home</a></li>
+        <li class="active"><a href="about.html">About</a></li>
+
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Register</a></li>
+            <li><a href="#">Sing in</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+           
+            <li><a href="#">Help</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </nav> <!-- / menu -->
+
+  <div class="container"> <!-- start container -->
+	    <h1>About of Tasksify</h1>
+
+	     <ol class="breadcrumb"><!-- start breadcrumb -->
+	              <li>
+	                <a href="index.html">Home</a>
+	              </li>
+	              <li class="active">
+	                <a href="about.html">About</a>
+	              </li>
+	    </ol><!-- / of breadcrumb -->
+
+	 <div class="row"><!-- start of row for list of taks -->
+	  	
+	  	
+	  </div><!-- end of row -->
+
+  </div><!-- / container  -->
+
+ 
+  
+    <script src="js/jquery.min.js"></script> <!-- jquery libraries -->
+    <script src="js/bootstrap.min.js"></script> <!-- bootsrap libraries -->
+    <script type="text/javascript" src="js/bootstrap-toggle.min.js"></script>
+    <script>
+        $(function(){
+        	$('#toggle-one').bootstrapToggle();
+        });
+    </script>
+	
+	
+</body>
+</html>
