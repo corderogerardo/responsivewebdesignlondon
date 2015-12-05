@@ -1,6 +1,7 @@
 .crop-img{
   max-height:150px;
   max-width:100%;
+  text-align: center;
 }
 
 .large-img{
