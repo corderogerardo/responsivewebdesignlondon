@@ -4,7 +4,7 @@
 // (plus a name and a thumbnail image)
 // The photos contain an image src and some metadata
 
-var animals_data = {
+var animalsdata = {
 	category : [
 		{
 			name : "Reptiles",

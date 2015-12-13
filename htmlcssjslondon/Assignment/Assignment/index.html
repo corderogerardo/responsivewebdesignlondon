@@ -8,16 +8,191 @@
 <script src="js/handlebars-v3.0.3.js"></script>
 
 <script src="js/bootstrap.min.js"></script>
-<script src="AnimalsData.js"></script>
-<script src="assignment.js"></script>
+<script src="js/AnimalsData.js"></script>
+<script src="js/animalsdata.js"></script>
 
 <link href="css/bootstrap.css" rel="stylesheet">
-<link href="assignment.css" rel="stylesheet">
+<link href="css/assignment.css" rel="stylesheet">
 
 </head>
 
 <body>
+<nav class="navbar navbar-default" role="navigation">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="index.html">Animals kingdom</a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse navbar-ex1-collapse">
+		<ul class="nav navbar-nav">
+			<li class="active" id="linkcat"><a href="index.html"  id="categories-tab" >Animals kingdom</a></li>
+			 <li role="" id="linkall"><a href="#" id="animals-tab" >All Animals</a></li>
+		</ul>
+		<form class="navbar-form navbar-left" role="search">
+			<div class="form-group">
+				<input type="text" class="form-control" placeholder="Search">
+			</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form>
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="#">Sign in</a></li>
+			<li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">About me</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li><a href="#">Separated link</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div><!-- /.navbar-collapse -->
+</nav><!-- end navbar -->
+<!-- start container -->
+<div class="container">
+	<div class="page-header"> <h1> Animals kingdom </h1></div>	
+	
+	<!-- Content we fill with javascript -->
+	<div id="content"  class="container-fluid"  role="main">
+      	</div>
+</div><!-- end container -->
 
     <!-- put your HTML here -->
+
+    <script id="category_template" type="text/x-handlebars-template">
+  <div class="row">
+<ol class="breadcrumb">
+  	<li>
+  		<a href="index.html">Animals kingdom</a>
+  	</li>
+  	
+  	<li class="active">Current</li>
+  </ol>
+    {{#each category}}
+    <div class="col-xs-12 col-md-3"> 
+        <div class="category-thumbnail" data-id="{{@index}}">
+                    
+          <div class="caption">
+          		{{#animals}}  
+          		{{#if @index}}
+		{{else}}
+		<img  src="{{image1}}" class="img-responsive" alt="Image">
+		{{/if}}
+
+		{{/animals}}
+              <h4> {{name}} </h4>
+              <h5> {{animals.length}} Animals Cuantity </h5>
+
+          </div>
+         </div>
+    </div> <!-- / col -->
+
+    {{/each}}
+
+  </div> <!-- / row -->
+</script>
+
+<script id="animals_template" type="text/x-handlebars-template">
+  <div class="row">
+  <ol class="breadcrumb">
+  	<li>
+  		<a href="index.html">Animals kingdom</a>
+  	</li>
+  	<li>
+  		<a href="#">{{name}}</a>
+  	</li>
+  	<li class="active">Current</li>
+  </ol>
+    <!-- xs-12 : small display shows a single column (taking up 12 grid columns)-->
+    <!-- md-3 : medium and up displays use 3 grid columns per column -->
+    <h2> {{name}}</h2>
+    {{#animals}}
+    <div class="col-xs-12 col-md-3"> 
+     <div >
+        <img class="animal-thumbnail img-responsive"  data-id="{{@index}}" src="{{image1}}" alt=""/> 
+           <img class="animal-thumbnail img-responsive"  data-id="{{@index}}" src="{{image2}}" alt=""/> 
+      </div>
+          
+         <div class="caption">
+            <h3>{{name}}</h3>
+            <p>{{description}}</p>
+         </div>
+       
+    </div> <!-- / col -->
+    {{/animals}}
+
+  </div> <!-- / row -->
+</script>
+
+<script id="animal_template" type="text/x-handlebars-template">
+  <div class="row">
+  <ol class="breadcrumb">
+  	<li>
+  		<a href="index.html">Animals kingdom</a>
+  	</li>
+  	<li>
+  		<a href="#">{{name}}</a>
+  	</li>
+  	<li class="active">Current</li>
+  </ol>
+    <div class="col-xs-12 col-md-12"> 
+         <h3>{{name}}</h3>
+      
+        <img class="large-img" src="{{image1}}" data-id="{{@index}} alt=""/> 
+        <img class="large-img" src="{{image2}}" data-id="{{@index}}alt=""/>
+   
+        <div class="caption">
+            <p>{{description}}</p>
+        </div>
+      </div> <!-- / col -->
+
+  </div> <!-- / row -->
+</script>
+
+ <script id="allanimals_template" type="text/x-handlebars-template">
+  <div class="row">
+<ol class="breadcrumb">
+  	<li>
+  		<a href="index.html">Animals kingdom</a>
+  	</li>
+  	
+  	<li class="active">All animals</li>
+  </ol>
+    {{#each category}}
+             
+          		
+              <h3> {{name}} </h3>
+              {{#animals}}
+              <div class="col-md-12">
+    	<div class="row">
+              <div class="col-md-3">
+              <h4>{{name}}</h4>
+              	<img  src="{{image1}}" class="img-responsive" alt="Image">
+              	<img  src="{{image2}}" class="img-responsive" alt="Image">
+              </div>
+              <div class="col-md-9">
+              	<h4>{{description}}</h4>
+              </div>
+            
+              </div>
+    	
+    	</div>
+
+	{{/animals}}
+
+
+    {{/each}}
+
+  </div> <!-- / row -->
+ 
+
+</script>
 
 </body>
